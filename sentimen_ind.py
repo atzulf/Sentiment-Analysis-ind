@@ -1,9 +1,15 @@
+# Nama 	: Ataka Dzulfikar
+# NIM  	: 22537141002
+# Prodi	: Teknologi Informasi / I
+
+# Impport library yang diperlukan
 import streamlit as st
 import pandas as pd
 from textblob import TextBlob
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
+# Fungsi untuk mengubah teks menjadi vektor fitur
 # Fungsi untuk analisis sentimen menggunakan Naive Bayes
 def analisis_sentimen_nb(text, model, vectorizer):
     # Transformasi teks input menjadi vektor
@@ -23,7 +29,7 @@ def analisis_sentimen_nb(text, model, vectorizer):
 
 def main():
     st.title("Analisis Sentimen menggunakan Streamlit")
-
+    # merupakan side bar yang digunakan
     menu = ["Beranda", "Tentang"]
     choice = st.sidebar.selectbox("Menu", menu)
 
@@ -64,6 +70,7 @@ def main():
             raw_text = st.text_area("Masukkan kalimat Anda")  # Input teks untuk analisis
             submit_button = st.form_submit_button(label='Cek Disini')
 
+        # Apabila form dikirimkan
         if submit_button and raw_text:
             col1 = st.columns(1)[0]
 
